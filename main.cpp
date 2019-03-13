@@ -106,29 +106,6 @@ int main()
    cout<<"Unesite koliko zadataka zelite generisati: ";
    cin>>n;
 
-   switch(n){
-   case 1:{
-        cout<<"Generisem 1 zadatak..."<<endl;
-        break;
-        }
-   case 2:{
-        cout<<"Generisem 2 zadatka..."<<endl;
-        break;
-        }
-   case 3:{
-        cout<<"Generisem 3 zadatka..."<<endl;
-        break;
-   }
-   case 4:{
-        cout<<"Generisem 4 zadatka..."<<endl;
-        break;
-        }
-   default:{
-        cout<<"Nepoznat unos."<<endl;
-        return 0;
-   }
-   }
-
  /* Pozvati funkciju koja generise onoliko zadataka
     koliko mu korisnik proslijedi! */
 
