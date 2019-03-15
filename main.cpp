@@ -9,55 +9,26 @@
  *
  */
 
+#include <bits/stdc++.h>
 #include <string>
 #include <ctype.h>
-#include <fstream>
-#include <vector>
-#include <iostream>
-#include <conio.h>
-#include <Windows.h>
-
 
 using namespace std;
 
+string textGenerator(){
 
+ /*
+ Napraviti funkciju koja uzima text iz fajla.
+ Svaki zadatak će biti spašen u .txt fileu i formatiran
+ kao LaTeX. Program će uzimati random .txt fajlove te ih
+ spasiti kao zadatke u jedan .HTML fajl
 
-bool fileExists(string Filename) {
-	ifstream f(Filename);
-	return f.good();
+ Onda možemo, konvertovati .HTML u .pdf, ali prvo implementirajmo
+ čitanje .txt file-a i njegovo konvertovanje u .html
+
+ */
+
 }
-
-
-
-
-
-string textGenerator(vector<string>& argument)
-{
-    string text;
-	for (int i = 0; i < argument.size(); ++i)
-		text += argument[i] +"\n";
-    return text;
-}
-
-void  readingTxtFile(string fileName, vector<string>& latex) {
-	ifstream file(fileName);
-	if (file.is_open()) {
-		string line;
-		while (getline(file, line)) {
-			latex.push_back(line.c_str());
-		}
-		file.close();
-	}
-}
-
-bool checkIfEmpty(string fileName) {
-
-	{	ifstream file(fileName);
-	return file.peek() == ifstream::traits_type::eof();
-	}
-}
-
-
 
 void welcomeMessage(){
 
@@ -73,8 +44,6 @@ int main()
 
    fstream file;
 
-   vector<string> latex;
-
   /* Generisanje .HTML file-a */
 
    file.open("index.html",ios::out);
@@ -87,39 +56,24 @@ int main()
        return 0;
    }
 
-   	if (!fileExists("zadatak.txt")) {
-		printf("Nije postojao .txt file pod nazivom zadatak.txt pa smo ga mi kreirali ");
-		ofstream file("zadatak.txt");
-		return 0;
-	}
-
-	if (checkIfEmpty("zadatak.txt")) {
-		printf("File vam je prazan!");
-		return 0;
-	}
-
  /* Default linija nakon generisanja */
 
    welcomeMessage();
 
    int n;
-   cout<<"Unesite koliko zadataka zelite generisati: ";
+   cout<<"Upisite koliko zadataka zelite generisati: ";
    cin>>n;
 
  /* Pozvati funkciju koja generise onoliko zadataka
     koliko mu korisnik proslijedi! */
 
-   cout<<"Uspjesno ste generisali fajl!"<<endl;
+   cout<<"Uspjesno ste generisali fajl!";
 
  /* Funkcija upisuje text u .html file */
 
-
-   readingTxtFile("zadatak.txt", latex);
-
-   file<<textGenerator(latex);
+   file<<textGenerator();
 
    file.close();
-
 
    return 0;
 }
